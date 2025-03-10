@@ -14,6 +14,7 @@ with open('data/dataset.jsonl', 'a', encoding='utf-8') as f:
     os.environ['TZ'] = 'Asia/Bishkek'
     time.tzset()
     current_time = time.strftime("%Y-%m-%d %H:%M:%S")
+    
     for url in tqdm(sub_urls):
         response = requests.get(url)
         soup = BeautifulSoup(response.text, 'html.parser')
